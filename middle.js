@@ -26,13 +26,13 @@ const middle = function(array) {
     middleArray.push(array[Math.floor(mid)]);
     // [1,2,3] --> [2]  - [1,2,3,4] --> [3]
     if (Number.isInteger(mid)) {
-        // for [1,2,3,4] we need 2 as well
-        // add it to the left of array --> [2,3]  
-        middleArray.unshift(array[mid - 1]);
-      }
+      // for [1,2,3,4] we need 2 as well
+      // add it to the left of array --> [2,3]
+      middleArray.unshift(array[mid - 1]);
+    }
   }
   return middleArray;
-}
+};
 
 assertArraysEqual(middle([1]),[]);
 assertArraysEqual(middle([1,2]),[]);
