@@ -7,9 +7,9 @@ const assertEqual = function(actual,expected) {
 };
 
 const countLetters = function(string) {
-  const myString = string.split(' ').join('');
   let result = {};
-  for (const char of myString) {
+  for (const char of string) {
+    if (char === ' ') continue; // Skip space!
     result[char] ? result[char] += 1 : result[char] = 1;
   }
   return result;
