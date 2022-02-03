@@ -23,7 +23,7 @@ const eqObjects = function(object1,object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) return false;
   const keys = Object.keys(object1);
   for (const key of keys) {
-    if (Array.isArray(object1[key])) {
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       if (!eqArrays(object1[key],object2[key])) return false;
     }
     else if (object1[key] !== object2[key]) return false;
@@ -42,6 +42,7 @@ const za = {z:[2,3], a:1};
 const abc = {a:1, b:2, c:3};
 const az2 = {a:1 ,z:[12,3]};
 
+assertEqual(eqObjects(ba,ab),true);
 assertEqual(eqObjects(ab,ba),true);
 assertEqual(eqObjects(az,za),true);
 
