@@ -11,7 +11,9 @@ const eqArrays = function(arr1,arr2) {
     return false;
   }
   for (let index = 0; index < arr1.length; index++) {
-    if (arr1[index] !== arr2[index]) {
+    if (Array.isArray(arr1[index]) && Array.isArray(arr2[index])) {
+      if (!eqArrays(arr1[index],arr2[index])) return false;
+    } else if (arr1[index] !== arr2[index]) {
       return false;
     }
   }
@@ -22,8 +24,11 @@ assertEqual(eqArrays([1,2,3],[1,2,3]),true);
 assertEqual(eqArrays(['1','2','3'],['1','2','3']),true);
 assertEqual(eqArrays([],[]),true);
 assertEqual(eqArrays(['abc','def'],['abc','def']),true);
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]),true);
 assertEqual(eqArrays([1,2,3],[1,2,'3']),false);
 assertEqual(eqArrays([1,2,3],[1,2]),false);
 assertEqual(eqArrays([1],[]),false);
 assertEqual(eqArrays([1,2,3],[1,2,'a']),false);
 assertEqual(eqArrays([1,2,3],[3,2,1]),false);
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]),false);
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]),false);
