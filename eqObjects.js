@@ -50,6 +50,9 @@ const ob5 = {c:[1], a:1, b:{kk:2, nn: {ll: 1}}};
 const ob6 = {c:[1], a:1, b:{kk:2, nn: {cc: 8, oo: {pp:7}, ll: 2}}};
 const ob7 = {c:[1], b:{nn: {oo: {pp: 7}, ll: 2, cc: 8}, kk:2}, a:1};
 const ba3 = {b:2, a:{j: 10}};
+const zab = { a: { z: 1 }, b: 2 };
+const azb = { a: { z: 1 }, b: 2 };
+const ayzb = { a: { y: 0, z: 1 }, b: 2 };
 
 
 assertEqual(eqObjects(ba,ab),true);
@@ -58,6 +61,7 @@ assertEqual(eqObjects(az,za),true);
 assertEqual(eqObjects(ob1,ob2),true);
 assertEqual(eqObjects(ob4,ob5),true);
 assertEqual(eqObjects(ob6,ob7),true);
+assertEqual(eqObjects(azb,zab),true);
 
 assertEqual(eqObjects(ab,ba2),false);
 assertEqual(eqObjects(ab,abc),false);
@@ -66,5 +70,5 @@ assertEqual(eqObjects(az,az2),false);
 assertEqual(eqObjects(ob1,ob3),false);
 assertEqual(eqObjects(ob5,ob6),false);
 assertEqual(eqObjects(ba2,ba3),false);
-
-console.log(typeof ob1)
+assertEqual(eqObjects(azb,ayzb),false);
+assertEqual(eqObjects(ayzb,ab),false);
