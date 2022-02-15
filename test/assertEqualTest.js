@@ -1,5 +1,10 @@
 const {assertEqual} = require('../assertEqual');
 
-assertEqual("LightHouse Lab" , "LightHouse");
+console.log("\n----------     Test assertEqual     ----------\n")
+
+console.log("     test should pass\n")
 assertEqual(1 , 1);
+
+console.log("\n     test should fail\n")
+assertEqual("LightHouse Lab" , "LightHouse");
 assertEqual(1 , '1');
