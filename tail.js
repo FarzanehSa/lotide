@@ -6,4 +6,4 @@ const tail = function(arr) {
   return myArr;
 };
 
-module.exports = {tail: tail};
+module.exports = {tail};

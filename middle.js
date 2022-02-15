@@ -14,4 +14,4 @@ const middle = function(array) {
   return middleArray;
 };
 
-module.exports = {middle: middle}
+module.exports = {middle}
