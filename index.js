@@ -12,8 +12,13 @@ const middle = require('./middle');
 const tail   = require('./tail');
 const takeUntil = require('./takeUntil');
 const without = require('./without');
+const assertEqual = require('./assertEqual');
+const assertArraysEqual = require('./assertArraysEqual');
+const assertObjectsEqual = require('./assertObjectsEqual');
+
 
 
 module.exports = {countLetters, countOnly, eqArrays, eqObjects,
   findKey, findKeyByValue, flatten, head, letterPositions, 
-  map, middle, tail, takeUntil, without};
+  map, middle, tail, takeUntil, without,
+  assertEqual, assertArraysEqual, assertObjectsEqual};
