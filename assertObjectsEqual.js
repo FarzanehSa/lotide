@@ -1,3 +1,5 @@
+// This function takes in 2 objects and prints out a message telling us if they match or not.
+
 const {eqObjects} = require('./eqObjects');
 
 const assertObjectsEqual = function(actualObject,expectedObject) {
